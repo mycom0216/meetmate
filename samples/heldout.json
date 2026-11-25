@@ -1,0 +1,70 @@
+{
+  "note": "Held-out 평가 세트 5건(가상 인물·가상 업무). 규칙을 만든 samples/scripts.json과 달리, 규칙 작성 '이후'에 말투를 일부러 다양하게(구어체·완곡 표현) 써서 만들었고, 이 세트로는 규칙을 고치지 않았습니다. gold는 사람이 정한 정답입니다.",
+  "meetings": [
+    { "id": "h1", "title": "스프린트 계획 회의", "heldAt": "2026-12-07", "lines": [
+      { "speaker": "정하늘", "text": "자 그럼 이번 스프린트 계획부터 얘기해 볼게요." },
+      { "speaker": "한도윤", "text": "지난 스프린트에서 못 끝낸 작업이 네 건 남았어요." },
+      { "speaker": "정하늘", "text": "그건 이번 주 안에 정리하는 걸로 가죠.", "gold": { "kind": "decision" } },
+      { "speaker": "오세라", "text": "알림 기능은 일정이 좀 걱정이네요.", "gold": { "kind": "issue" } },
+      { "speaker": "강태민", "text": "알림 서버는 제가 맡을게요. 수요일까지 초안 올리겠습니다.", "gold": { "kind": "action", "owner": "강태민", "due": "2026-12-09" } },
+      { "speaker": "정하늘", "text": "도윤 님은 금요일까지 테스트 계획서 좀 써 주시겠어요?", "gold": { "kind": "action", "owner": "한도윤", "due": "2026-12-11" } },
+      { "speaker": "한도윤", "text": "네, 알겠습니다." },
+      { "speaker": "오세라", "text": "디자인 시안은 아직 확정된 게 없어요.", "gold": { "kind": "issue" } },
+      { "speaker": "정하늘", "text": "그럼 시안은 다음 주 화요일에 다시 보는 걸로 할게요.", "gold": { "kind": "decision" } },
+      { "speaker": "강태민", "text": "로그 수집 방식은 어떻게 할지 모르겠어요.", "gold": { "kind": "issue" } },
+      { "speaker": "정하늘", "text": "점심 먹고 계속하죠." },
+      { "speaker": "오세라", "text": "저는 오늘 중으로 시안 초안 공유할게요.", "gold": { "kind": "action", "owner": "오세라", "due": "2026-12-07" } }
+    ] },
+    { "id": "h2", "title": "마케팅 캠페인 회의", "heldAt": "2026-12-08", "lines": [
+      { "speaker": "한도윤", "text": "이번 캠페인 성과부터 볼게요." },
+      { "speaker": "오세라", "text": "클릭률이 지난달보다 올랐습니다." },
+      { "speaker": "정하늘", "text": "광고 예산은 지금 수준으로 유지하는 것으로 합시다.", "gold": { "kind": "decision" } },
+      { "speaker": "강태민", "text": "경쟁사 가격 정보를 아직 못 구했어요.", "gold": { "kind": "issue" } },
+      { "speaker": "정하늘", "text": "태민 님이 다음 주 월요일까지 경쟁사 가격 조사 부탁드립니다.", "gold": { "kind": "action", "owner": "강태민", "due": "2026-12-14" } },
+      { "speaker": "오세라", "text": "랜딩 페이지 문구는 이번 주 목요일까지 제가 수정해서 올릴게요.", "gold": { "kind": "action", "owner": "오세라", "due": "2026-12-10" } },
+      { "speaker": "한도윤", "text": "이메일 발송은 금요일로 확정했습니다.", "gold": { "kind": "decision" } },
+      { "speaker": "오세라", "text": "수신 거부율이 너무 높은 건 문제예요.", "gold": { "kind": "issue" } },
+      { "speaker": "강태민", "text": "오늘 날씨 진짜 좋다." },
+      { "speaker": "정하늘", "text": "그건 다음 회의 때 원인을 같이 봐야 할 것 같아요.", "gold": { "kind": "issue" } },
+      { "speaker": "정하늘", "text": "오늘은 여기까지 할게요." }
+    ] },
+    { "id": "h3", "title": "장애 회고 회의", "heldAt": "2026-12-09", "lines": [
+      { "speaker": "오세라", "text": "어제 발생한 결제 장애 원인부터 공유드릴게요." },
+      { "speaker": "한도윤", "text": "데이터베이스 연결 수 제한에 걸린 게 원인이었습니다." },
+      { "speaker": "정하늘", "text": "재발 방지를 위해 연결 풀 크기를 두 배로 늘리기로 했습니다.", "gold": { "kind": "decision" } },
+      { "speaker": "한도윤", "text": "제가 내일까지 설정 변경을 반영하고 알려 드리겠습니다.", "gold": { "kind": "action", "owner": "한도윤", "due": "2026-12-10" } },
+      { "speaker": "강태민", "text": "모니터링 알림 기준은 아직 정해진 게 없습니다.", "gold": { "kind": "issue" } },
+      { "speaker": "정하늘", "text": "세라 님, 이번 주 금요일까지 알림 기준 초안 좀 부탁해요.", "gold": { "kind": "action", "owner": "오세라", "due": "2026-12-11" } },
+      { "speaker": "오세라", "text": "네 그렇게 할게요." },
+      { "speaker": "강태민", "text": "장애 공지가 늦은 건 반성해야 할 부분이에요.", "gold": { "kind": "issue" } },
+      { "speaker": "정하늘", "text": "앞으로 장애가 나면 십 분 안에 공지하는 걸로 정합시다.", "gold": { "kind": "decision" } },
+      { "speaker": "한도윤", "text": "커피 한잔 하실래요?" },
+      { "speaker": "정하늘", "text": "회고는 이걸로 마칠게요." }
+    ] },
+    { "id": "h4", "title": "채용 면접 일정 회의", "heldAt": "2026-12-10", "lines": [
+      { "speaker": "강태민", "text": "신규 개발자 면접 일정을 정해야 합니다.", "gold": { "kind": "issue" } },
+      { "speaker": "오세라", "text": "후보자는 총 여섯 명이에요." },
+      { "speaker": "정하늘", "text": "면접은 다음 주 화요일과 수요일에 나눠서 진행합니다.", "gold": { "kind": "decision" } },
+      { "speaker": "한도윤", "text": "면접관은 누가 들어가나요?", "gold": { "kind": "issue" } },
+      { "speaker": "정하늘", "text": "한도윤 님과 제가 들어가는 걸로 하죠.", "gold": { "kind": "decision" } },
+      { "speaker": "강태민", "text": "평가표는 제가 이번 주 금요일까지 만들어서 공유할게요.", "gold": { "kind": "action", "owner": "강태민", "due": "2026-12-11" } },
+      { "speaker": "오세라", "text": "면접 장소는 회의실 두 개가 필요한데 예약이 가능한지 확인해 봐야 해요.", "gold": { "kind": "issue" } },
+      { "speaker": "정하늘", "text": "세라 님이 내일까지 회의실 예약 가능 여부를 확인해 주세요.", "gold": { "kind": "action", "owner": "오세라", "due": "2026-12-11" } },
+      { "speaker": "오세라", "text": "알겠습니다." },
+      { "speaker": "강태민", "text": "점심 메뉴는 정했나요?" },
+      { "speaker": "정하늘", "text": "이상입니다." }
+    ] },
+    { "id": "h5", "title": "개인정보 점검 회의", "heldAt": "2026-12-11", "lines": [
+      { "speaker": "한도윤", "text": "개인정보 처리방침 개정 건입니다." },
+      { "speaker": "오세라", "text": "현재 방침은 이 년 전 버전 그대로예요." },
+      { "speaker": "정하늘", "text": "개정안은 법무팀 검토를 거쳐 확정하기로 했습니다.", "gold": { "kind": "decision" } },
+      { "speaker": "강태민", "text": "법무팀 일정이 언제 가능한지 몰라요.", "gold": { "kind": "issue" } },
+      { "speaker": "한도윤", "text": "제가 다음 주 월요일까지 법무팀에 검토 요청 메일을 보내겠습니다.", "gold": { "kind": "action", "owner": "한도윤", "due": "2026-12-14" } },
+      { "speaker": "오세라", "text": "로그 보관 기간이 몇 달이 적당한지 논의가 필요합니다.", "gold": { "kind": "issue" } },
+      { "speaker": "정하늘", "text": "보관 기간은 육 개월로 결정하겠습니다.", "gold": { "kind": "decision" } },
+      { "speaker": "강태민", "text": "육 개월이면 저장 비용이 얼마나 늘어나는지도 봐야 해요.", "gold": { "kind": "issue" } },
+      { "speaker": "정하늘", "text": "태민 님이 이번 주 일요일까지 저장 비용 추정치를 정리해 주세요.", "gold": { "kind": "action", "owner": "강태민", "due": "2026-12-13" } },
+      { "speaker": "오세라", "text": "오늘 회의 수고하셨습니다." }
+    ] }
+  ]
+}

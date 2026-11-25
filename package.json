@@ -1,0 +1,13 @@
+{
+  "name": "meetmate",
+  "version": "1.0.0",
+  "description": "MeetMate - 로컬 음성 받아쓰기 기반 회의록 정리(요약·결정·할 일·미결) 시스템",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24.0.0" },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test test/",
+    "eval": "node tools/eval.mjs"
+  }
+}

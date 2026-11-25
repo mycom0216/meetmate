@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MeetMate — 회의 음성 정리</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">MeetMate <span>회의 음성 → 받아쓰기 → 결정·할 일 정리 (내 PC에서만 처리)</span></div>
+    <div class="status">
+      <span id="status">상태 확인 중…</span>
+      <button id="reconnect" class="ghost mini" type="button">다시 연결</button>
+      <button id="forget" class="ghost mini danger" type="button">내 기록 모두 삭제</button>
+    </div>
+  </header>
+
+  <main>
+    <nav class="tabs" role="tablist">
+      <button class="tab on" data-tab="new" type="button">새 회의</button>
+      <button class="tab" data-tab="list" type="button">내 회의</button>
+      <button class="tab" data-tab="actions" type="button">할 일 모아보기</button>
+      <button class="tab" data-tab="search" type="button">회의 검색</button>
+    </nav>
+
+    <section id="tab-new" class="panel">
+      <h2>1. 회의를 올려 주세요</h2>
+      <div class="two">
+        <label>회의 제목 <input id="title" type="text" maxlength="80" placeholder="예) 주간 회의"></label>
+        <label>회의 날짜 <input id="heldAt" type="date"></label>
+      </div>
+      <p class="hint">기한 표현("다음 주 금요일까지")은 이 날짜를 기준으로 실제 날짜로 바꿉니다.</p>
+
+      <div class="modes">
+        <div class="mode">
+          <h3>🎙 음성 파일</h3>
+          <input id="file" type="file" accept="audio/*,.wav,.mp3,.m4a,.ogg,.flac,.webm">
+          <p class="hint">wav·mp3·m4a·ogg·flac·webm. 음성은 받아쓰기 후 바로 삭제됩니다.</p>
+          <button id="goAudio" class="primary" type="button">받아쓰기 시작</button>
+        </div>
+        <div class="mode">
+          <h3>⏺ 바로 녹음</h3>
+          <button id="rec" class="ghost" type="button">녹음 시작</button>
+          <span id="recTime" class="muted"></span>
+          <p class="hint">마이크 권한이 필요합니다. 녹음을 멈추면 아래 "받아쓰기 시작"으로 올라갑니다.</p>
+          <audio id="player" controls class="hidden"></audio>
+        </div>
+        <div class="mode">
+          <h3>📝 글 대본</h3>
+          <textarea id="text" rows="7" placeholder="이름: 내용 형태로 붙여 넣으세요. [00:12] 시각, SRT·VTT 자막도 됩니다."></textarea>
+          <div class="row">
+            <button id="goText" class="primary" type="button">정리 시작</button>
+            <button id="sample" class="ghost" type="button">샘플 불러오기</button>
+          </div>
+        </div>
+      </div>
+      <label class="chk"><input id="useLlm" type="checkbox"> AI 보조(실험적): 로컬 AI가 규칙이 놓친 항목을 제안 — 검증을 통과한 것만 반영, 정밀도가 조금 낮아질 수 있음</label>
+      <p id="newMsg" class="muted" aria-live="polite"></p>
+    </section>
+
+    <section id="tab-list" class="panel hidden"><h2>내 회의</h2><div id="list"></div></section>
+    <section id="tab-actions" class="panel hidden"><h2>할 일 모아보기</h2><label class="chk"><input id="allActions" type="checkbox"> 완료한 것도 보기</label><div id="actions"></div></section>
+    <section id="tab-search" class="panel hidden">
+      <h2>회의 검색</h2>
+      <div class="row"><input id="q" type="text" placeholder="예) 배포 날짜" maxlength="200"><button id="goSearch" class="primary" type="button">검색</button></div>
+      <p class="hint">검색 결과는 AI의 요약이 아니라 <b>실제 발언 원문</b>(회의·시각·말한 사람)입니다.</p>
+      <div id="hits"></div>
+    </section>
+
+    <section id="view" class="hidden"></section>
+  </main>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
